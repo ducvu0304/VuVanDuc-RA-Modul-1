@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Css Style -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/men.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-container">
+        <!-- Rotating-Promotion-Banner -->
+        <div class="rotating-promo-banner">
+            <div class="rotating-promotion__content">
+                <a href="">The Semi-Annual Sale is here Up to 50% off. Prices as marked. Offer valid through 7/31/23. See the Styles ></a>
+            </div>  
+        </div>
+        <section class="container">
+            <!-- Toplinks -->
+            <div class="toplinks">
+                <ul class="links">
+                    <li class="myaccount"><a href="">Help</a></li>
+                    <li class="track"><a href="">OderTracker</a></li>
+                    <li id="login" class="login" onclick="showLoginform(event)">
+                        <i class="fa-solid fa-user"></i>
+                        <span id="username" class="username"></span>
+                    </li>
+                    <li class="logout" onclick="logout()">Logout</li>
+                </ul>
+            </div>
+            <!-- Header-Bottom -->
+            <div class="header-bottom">
+                <!-- Header Logo -->
+                <div class="logo-wrapper">
+                    <a href="../../index.html">
+                        <img class="logo" src="../image/general/logo-img.jpg" alt="logo-v2.PNG">
+                        <h1 class="branch-name">Torus<span class="branch-name__text--thin">Store</span></h1>
+                    </a>
+                </div>
+                <div class="header-bottom__content">
+                    <!--  Navigation -->
+                    <nav class="navigation">
+                        <ul class="navigation-list">
+                            <li class="navigation-item navigation-home"><a href="../../index.html">Home</a></li>
+                            <li class="navigation-item navigation-men"><a href="./men.html">Men</a></li>
+                            <li class="navigation-item navigation-women"><a href="./women.html">Women</a></li>
+                            <li class="navigation-item navigation-sports"><a href="./sports.html">Sports</a></li>
+                            <!-- <li class="navigation-item navigation-sale"><a href="./semi-annual-sale.html">Semi-annual Sale</a></li> -->
+                        </ul>
+                    </nav>
+                    <!-- Search And Cart -->
+                    <div class="search-cart-wrapper">
+                        <div class="search-box">
+                            <input type="text" name="SearchBox" id="searchValue" placeholder="Search" onkeyup="search()">
+                            <i class="fa-solid fa-magnifying-glass icon-search"></i>
+                            <div class="hints__search">
+                                <!-- <div class="hints__search-wrapper" >
+                                    <img src="./assets/image/product/men/EVORIDE-SPEED.webp" alt="">
+                                    <span class="hints__search-content" onclick="findProduct(0)">3213213123dasd1312</span>
+                                </div> -->
+                                <!-- <div class="hints__search-wrapper">
+                                    <img src="./assets/image/product/men/EVORIDE-SPEED.webp" alt="">
+                                    <span class="hints__search-content">3213213123dasd1312</span>
+                                </div> -->
+                                <!-- <div class="hints__search-wrapper">
+                                    <img src="./assets/image/product/men/EVORIDE-SPEED.webp" alt="">
+                                    <span class="hints__search-content">3213213123dasd1312</span>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="cart" onclick= "viewCart()">
+                            <i class="fa fa-shopping-cart cart-font-size" aria-hidden="true"></i> 
+                            <span class="cart-quantity">0</span>
+                            <div class="cart-box"> 
+                                <!-- <img class="cart-box__img" src="./assets/image/general/cart_empty.png" alt="cart_empty.png">
+                                <p class="sub-title cart-box__text">Your Shopping Cart is Empty</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+             <!-- Popup login -->
+             <div id="loginForm" class="popup-login"> 
+                <div class="block-form">
+                    <div class="close-login-form">
+                        <button class="btn--close" onclick="closeLoginForm()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <form class="form login-form" action="">
+                        <h2 class="title title-login-form">SIGN IN</h2>
+                        <div class="inpt-box"> 
+                            <input id="loginEmail" class="inpt" type="text" placeholder="Email*">
+                            <p id="emailMessage" class="valid"></p>  
+                        </div>
+                        <div class="inpt-box">
+                            <input id="loginPassword" class="inpt"  type="password" placeholder="Password*">
+                            <p id="passwordMessage" class="valid"></p>
+                        </div>
+                        <div class="remember-forgot-wrapper">
+                            <div class="remember">
+                                <label class="checkbox">Remember me
+                                    <input id="checked" type="checkbox" checked="checked" onclick="check()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="forgot">
+                                <a class="text" href="">Forgot Password?</a> 
+                            </div>  
+                        </div>
+                        <input class="btn btn-singin" type="submit" value="SIGN IN" onclick="login(event)">
+                        <p class="text bottom-msg" >
+                            Don't have an account? 
+                            <a href="./register.html">Create Account</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div id="snackbar"></div>
+        </section>
+    </header>
+     <!-- End header !! -->
+    <main class="main-container">
+        <section class="container ">
+            <div class="filter-container">
+                <div class="sub-heading">
+                    <h2>FILTER BY</h2>
+                </div> 
+                <div class="filter-block filter-block-category">
+                    <h3 class="title">CATEGORY <span>+</span></h3>
+                    <div class="filter_content">
+                        <div class="new-arrival">
+                            <label class="checkbox">NEW ARRIVALS
+                                <input id="new" type="checkbox" onclick="getValueOfCategory()">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="sale">
+                            <label class="checkbox">SALE
+                                <input id="sale" type="checkbox" onclick="getValueOfCategory()">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-block ">
+                    <h3 class="title">GENDER <span>+</span></h3>
+                    <div class="filter_content">
+                        <div class="men">
+                            <label class="checkbox">Men
+                                <input id="men" type="checkbox" onclick="filterDataByGender()">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="women">
+                            <label class="checkbox">Women
+                                <input id="women" type="checkbox" onclick="filterDataByGender()">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-block filter-block-category">
+                    <h3 class="title">PRICE <span>+</span></h3>
+                    <div class="slider-container  filter-price-wrapper">
+                        <div class="slider-track"></div>
+                        <div class="slider-thumb slider-thumb--min"></div>
+                        <div class="slider-thumb slider-thumb--max"></div>
+                        <div class="slider-value">
+                             <span class="slider-value--min">
+                                 <span>đ</span>
+                                 <input class="value--min" value="1900000">
+                             </span>
+                             <span class="slider-value--max">
+                                 <span>đ</span>
+                                 <input class="value--max" value="5500000">
+                             </span>
+                        </div>
+                     </div>
+                </div>
+            </div>   
+            <div class="product-container">
+                <div class="control-content">
+                    <div class="sub-heading">
+                        <h2>
+                            SHOES
+                            <span class="products-count"> 
+                                <span class="p_count">(166)</span>
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="control-content">
+                    <div id="products" class="bucket-group bucket-grid">
+                        <!-- <div class="bucket">
+                            <ul class="product">
+                                <li class="product-tag"> <span>NEW ARRIVAL</span> </li>
+                                <li class="product-image"><img class="image" src="../image/product/men/EX89.webp" alt=""></li>
+                                <li class="product-catlog"><h3 class="title">MEN SPORTSTYLE SHOES</h3></li>
+                                <li class="product-name"><h3 class="title">EMBOSTE</h3></li>
+                                <li class="product-price">3.154.582 ₫</li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="bucket">
+                            <ul class="product">
+                                <li class="product-tag"> <span>NEW ARRIVAL</span></li>
+                                <li class="product-image"><img class="image" src="../image/product/men/JAPAN-S.webp" alt=""></li>
+                                <li class="product-catlog"><h3 class="title">MEN SPORTSTYLE SHOES</h3></li>
+                                <li class="product-name"><h3 class="title">EX89</h3></li>
+                                <li class="product-price">$59.70</li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="bucket">
+                            <ul class="product">
+                                <li class="product-tag"> <span>NEW ARRIVAL</span></li>
+                                <li class="product-image"><img class="image" src="../image/product/men/GT-2160.webp" alt=""></li>
+                                <li class="product-catlog"><h3 class="title">MEN SPORTSTYLE SHOES</h3></li>
+                                <li class="product-name"><h3 class="title">GT-2160</h3></li>
+                                <li class="product-price">3.154.582 ₫</li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="bucket">
+                            <ul class="product">
+                                <li class="product-tag"> <span>NEW ARRIVAL</span></li>
+                                <li class="product-image"><img class="image" src="../image/product/men/GT-2160.webp" alt=""></li>
+                                <li class="product-name"><h3>EMBOSTE</h3></li>
+                                <li class="product-price">$59.70</li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="bucket">
+                            <ul class="product">
+                                <li class="product-tag"> <span>NEW ARRIVAL</span></li>
+                                <li class="product-image"><img class="image" src="../image/product/men/GT-1000-11-LTE-SHOW.webp" alt=""></li>
+                                <li class="product-name"><h3>EMBOSTE</h3></li>
+                                <li class="product-price">$59.70</li>
+                            </ul>
+                        </div> -->
+                        <!-- <div class="bucket">
+                            <ul class="product">
+                                <li class="product-tag"> <span>NEW ARRIVAL</span></li>
+                                <li class="product-image"><img class="image" src="../image/product/men/GT-2160.webp" alt=""></li>
+                                <li class="product-name"><h3>EMBOSTE</h3></li>
+                                <li class="product-price">$59.70</li>
+                            </ul>
+                        </div> -->
+                    
+                    </div>
+                    <div class="pagination">
+                        <!-- <span class="previous-page" onclick="previousPage()"><i class="fa-solid fa-angles-left"></i></span>
+                        <span class="page active" onclick="pagination(1)">1</span>
+                        <span class="page" onclick="pagination(2)">2</span>
+                        <span class="page" onclick="pagination(3)">3</span>
+                        <span class="page" onclick="pagination(4)">4</span>
+                        <span class="page" onclick="pagination(5)">5</span>
+                        <span class="page" onclick="pagination(6)">6</span>
+                        <span class="next-page" onclick="nextPage()"><i class="fa-solid fa-angles-right"></i></span> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-container">
+        <div class="container">
+            <div class="col">
+                <h3 class="sub-title">COMPANY NAME</h3>
+                <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                        Toru Store is established in accordance with Certificate of Enterprise Registration No. 0315898690,  
+                        first registration on 13 September 2019, third amendment on 3 November 2021, 
+                        issued by the Office of Business Registration of the Department of Planning and Investment of Ho Chi Minh City.
+                    </li>
+                    <li class="footer-nav__item">
+                        License on Establishment of Retail Outlet No. 0315898690/KD-0437/03.001
+
+                    </li>
+                </ul>
+            </div>
+            <div class="col col-products ">
+                <h3 class="sub-title  ">PRODUCTS</h3>
+                <ul>
+                    <li class="footer-nav__item">New Arrivals</li>
+                    <li class="footer-nav__item">Best Sellers</li>
+                    <li class="footer-nav__item">Men</li>
+                    <li class="footer-nav__item">Women</li>
+                </ul>
+            </div>
+            <div class="col col-userful-links">
+                <h3 class="sub-title">USEFUL LINKS</h3>
+                <ul class="footer-nav__item">
+                    <li class="footer-nav__item">Your Account</li>
+                    <li class="footer-nav__item">Become an Affiliate</li>
+                    <li class="footer-nav__item">Shipping Rates</li>
+                    <li class="footer-nav__item">Help</li>
+                </ul>
+            </div>
+            <div class="col col-contact">
+                <h3 class="sub-title">CONTACT</h3>
+                <ul>
+                    <li class="footer-nav__item">
+                        <i class="fa-solid fa-house"></i>
+                        Binh Tan, Ho Chi Minh city, VN
+                    </li>
+                    <li class="footer-nav__item">
+                        <i class="fa-solid fa-envelope"></i>
+                        TorusStore@gmail.com
+                    </li>
+                    <li class="footer-nav__item">
+                        <i class="fa-solid fa-tty"></i>
+                        0965 999 999
+                    </li>
+                    <li class="footer-nav__item">
+                        <i class="fa-solid fa-fax"></i>
+                        0965 888 888
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div  class="footer-bottom">
+            Register for free
+            <button class="btn bt--small">SIGN UP!</button>
+        </div>
+        <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>  
+    </footer>
+
+
+    <!-- Js -->
+    <script src="../js/sports.js"></script>
+    <!-- <script src="../js/data.js"></script> -->
+</body>
+</html>

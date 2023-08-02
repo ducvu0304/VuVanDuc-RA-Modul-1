@@ -1,0 +1,135 @@
+.main-container {
+    border-top: 1px solid var(--line-color);
+}
+
+.main-container .container {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.main-container .container .heading {
+    margin-bottom: 40px;
+}
+
+.shopping-cart-container {
+    display: grid;
+    grid-template-columns: auto 33%;
+    column-gap: 80px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.left-pane table{
+    width: 100%;
+}
+
+.right-pane table{
+    width: 100%;
+}
+
+
+table, th, td {
+    border: 1px solid rgb(233, 227, 227);
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.shoping-cart-detail th, .shoping-cart-detail td {
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.shoping-cart-detail {
+    border: none;
+}
+
+.shoping-cart-detail td {
+    text-align: left;
+    font-size: 1.3rem;
+}
+
+.product-info {
+    font-size: 1.1rem;
+}
+
+.product-image {
+    width: 100px;
+}
+
+.product-price, .total { 
+    width: 120px;
+}
+
+.product-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.action {
+    width: 40px;
+}
+
+
+.shipping-info-col {
+    position: relative;
+    top: 0;
+    left: 0;
+    border: none;
+}
+
+.shipping-info {    
+    position: absolute;
+    top: 0;
+    margin-top: 10px;
+}
+
+.return-policy {
+    border: none;
+}
+
+.return-policy div {
+    text-align: right;
+    padding-right: 5px;
+}
+/* Right-Pane */
+/* ORDER-SUMARY */
+
+.order-sumary {
+    background-color: #f1f2f2;
+}
+
+.code-sub-title {
+    margin-top: 10px;
+}
+
+.checkout {
+    text-align: center;
+}
+
+.checkout p {
+    margin-bottom: 8px;
+    line-height: 1.6rem;
+    font-size: 1.3rem;
+}
+
+.checkout h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding-top: 15px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+.checkout button {
+    width: 100%;
+}
+
+.apply button {
+    width: 100%;
+}
+
+.code .inpt {
+    width: 100%;
+}

@@ -1,0 +1,140 @@
+.main-container {
+    border-top: 1px solid var(--line-color);
+    background-color: #f1f2f2;
+}
+
+.main-container .container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    column-gap: 20px;
+    width: calc(100% - 10%);
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    margin: 50px;
+}
+
+/* Container left */
+.container--left {
+    width: 100%;
+    background-color: var(--white-color);
+    box-shadow: 1px 1px 8px 2px var(--line-color);  
+}
+
+.left-pane {
+    width: 100%;
+    padding: 20px;
+}
+
+.product-image img{
+   object-fit: contain;
+    width: 100%;
+}
+/* End Container left */
+
+/* Product-Container */
+.container--right {
+    background-color: var(--white-color);
+    box-shadow: 1px 1px 8px 2px var(--line-color);  
+}
+
+.right-pane {
+    width: 90%;
+    padding: 50px 10px;
+    margin: 0 auto;
+}
+
+.product-detai--top {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line-color);
+}
+
+.product-detai--top .fa-star,
+.product-detai--top .fa-star-half-stroke {
+    cursor: auto;
+}
+
+.product-detai--top .product-catlog, .product-name {
+    font-size: 2rem;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.product-detai--top .rating {
+    padding-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.product-price {
+    font-size: 1.8rem;
+}
+
+.product-detail--bottom  {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.product-detail--bottom  h3 {
+    font-weight: 500;
+}
+
+.product-detail--bottom div {
+    margin-bottom: 20px;
+}
+
+.size {
+    background-color: rgba(197, 187, 187, 0.2);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.size-active {
+    background-color: rgb(58, 58, 240);
+    color: var(--white-color);
+}
+
+.product-quantity {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    align-items: center;
+    border-radius: 30px;
+    width: 100%;
+    padding: 0;
+} 
+
+.product-quantity .minus {
+    margin-left: 20px;
+    padding: 0 20px;
+}
+
+.product-quantity .plus {
+    margin-right: 20px;
+    padding: 0 20px;
+}
+
+.add-to-cart .btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    width: 100%;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.more-info .sub-tiitle{
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.more-info-list {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.more-info-list li {
+    margin-bottom: 10px;
+}
+

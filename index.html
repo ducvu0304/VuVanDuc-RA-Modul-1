@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Css Style -->
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <a href=""></a>
+    <!-- Header -->
+    <header class="header-container">
+        <!-- Rotating-Promotion-Banner -->
+        <div class="rotating-promo-banner">
+            <div class="rotating-promotion__content">
+                <a href="">The Semi-Annual Sale is here–Up to 50% off. Prices as marked. Offer valid through 7/31/23. See the Styles ></a>
+            </div>  
+        </div>
+        <section class="container">
+            <!-- Toplinks -->
+            <div class="toplinks">
+                <ul class="links">
+                    <li class="myaccount"><a href="">Help</a></li>
+                    <li class="track"><a href="">OderTracker</a></li>
+                    <li id="login" class="login" onclick="showLoginform(event)">
+                        <i class="fa-solid fa-user"></i>
+                        <span id="username" class="username"></span>
+                    </li>
+                    <li class="logout" onclick="logout()">Logout</li>
+                </ul>
+            </div>
+            <!-- Header-Bottom -->
+            <div class="header-bottom">
+                <!-- Header Logo -->
+                <div class="logo-wrapper">
+                    <a href="./index.html">
+                        <img class="logo" src="./assets/image/general/logo-img.jpg " alt="logo-v2.PNG">
+                        <h1 class="branch-name">Torus<span class="branch-name__text--thin">Store</span></h1>
+                    </a>
+                </div>
+                <div class="header-bottom__content">
+                    <!--  Navigation -->
+                    <nav class="navigation">
+                        <ul class="navigation-list">
+                            <li class="navigation-item"><a href="./index.html">Home</a></li>
+                            <li class="navigation-item"><a href="./assets/torus/men.html">Men</a></li>
+                            <li class="navigation-item"><a href="./assets/torus/women.html">Women</a></li>
+                            <li class="navigation-item"><a href="./assets/torus/sports.html">Sports</a></li>
+                            <!-- <li class="navigation-item"><a href="./assets/torus/semi-annual-sale.html">Semi-annual Sale</a></li> -->
+                        </ul>
+                    </nav>
+                    <!-- Search And Cart -->
+                    <div class="search-cart-wrapper">
+                        <div class="search-box">
+                            <input type="text" name="SearchBox" id="searchValue" placeholder="Search" onkeyup="search()">
+                            <i class="fa-solid fa-magnifying-glass icon-search"></i>
+                            <div class="hints__search">
+                                <!-- <div class="hints__search-wrapper" >
+                                    <img src="./assets/image/product/men/EVORIDE-SPEED.webp" alt="">
+                                    <span class="hints__search-content" onclick="findProduct(0)">3213213123dasd1312</span>
+                                </div> -->
+                                <!-- <div class="hints__search-wrapper">
+                                    <img src="./assets/image/product/men/EVORIDE-SPEED.webp" alt="">
+                                    <span class="hints__search-content">3213213123dasd1312</span>
+                                </div> -->
+                                <!-- <div class="hints__search-wrapper">
+                                    <img src="./assets/image/product/men/EVORIDE-SPEED.webp" alt="">
+                                    <span class="hints__search-content">3213213123dasd1312</span>
+                                </div> -->
+                                <a href="./assets/torus/women.html"></a>
+                            </div>
+                        </div>
+                        <div class="cart" onclick= "viewCart()">
+                            <i class="fa fa-shopping-cart cart-font-size" aria-hidden="true"></i> 
+                            <span class="cart-quantity">0</span>
+                            <div class="cart-box"> 
+                                <img class="cart-box__img" src="./assets/image/general/cart_empty.png" alt="cart_empty.png">
+                                <p class="sub-title cart-box__text">Your Shopping Cart is Empty</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Popup login -->
+            <div id="loginForm" class="popup-login"> 
+                <div class="block-form">
+                    <div class="close-login-form">
+                        <button class="btn--close" onclick="closeLoginForm()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <form class="form login-form" action="">
+                        <h2 class="title title-login-form">SIGN IN</h2>
+                        <div class="inpt-box"> 
+                            <input id="loginEmail" class="inpt" type="text" placeholder="Email*">
+                            <p id="emailMessage" class="valid"></p>  
+                        </div>
+                        <div class="inpt-box">
+                            <input id="loginPassword" class="inpt" type="password" placeholder="Password*">
+                            <p id="passwordMessage" class="valid"></p>
+                        </div>
+                        <div class="remember-forgot-wrapper">
+                            <div class="remember">
+                                <label class="checkbox">Remember me
+                                    <input id="checked" type="checkbox" checked="checked" onclick="check()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="forgot">
+                                <a class="text" href="">Forgot Password?</a> 
+                            </div>  
+                        </div>
+                        <input class="btn btn-singin" type="submit" value="SIGN IN" onclick="login(event)">
+                        <p class="text bottom-msg" >
+                            Don't have an account? 
+                            <a href="./assets/torus/register.html">Create Account</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div id="snackbar">Login successfully!</div>
+        </section>
+        <div class="header-banner">
+            <a href=""><img class="banner" id="topBanner" src="./assets/image/banner/OIP.jpg" alt="banner-image"></a>
+        </div>
+    </header>
+     <!-- End header !! -->
+    <main class="main-container">
+        <section class="container">
+            <div class="block promo-product-block">
+                <h2 class="sub-heading"> OUR POPULAR PRODUCT</h2>
+                <div class="promo-product-wrapper">
+                    <div class="promo-product">
+                        <!-- <ul class="product-info">
+                            <li class="product-title">
+                                <span class="title">New <i>Arrivals</i></span>
+                            </li>
+                            <li class="product-img">
+                                <img src="" alt="">
+                                <img src="./assets/product/men/GEL-RESOLUTION-9.webp" alt="">
+                                <img src="./assets/image/product/men/GEL-CHALLENGER-13.webp" alt="">
+                            </li>
+                            <li class="sub-title product-name">MEN RUNNING SHOES <br>GT-2000</li>
+                            <li class="sub-title product-vote">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa-solid fa-star-half-stroke checked"></span>
+                                </div>
+                            </li>
+                            <li class="sub-title product-price">2.000.000 đ</li>
+                            <li class="sub-title"><button class="btn btn-buy">Buy Now</button></li>
+                        </ul>    -->
+                    </div>
+                    <div class="promo-product">
+                        <ul class="product-info">
+                            <li class="product-title">
+                                <span class="title">New <i>Arrivals</i></span>
+                            </li>
+                            <li class="product-img">
+                                <img src="./assets/image/product/men/GT-2000.webp" alt="">
+                            </li>
+                            <li class="sub-title product-name">MEN RUNNING SHOES <br>GT-2000</li>
+                            <li class="sub-title product-vote">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa-solid fa-star-half-stroke checked"></span>
+                                </div>
+                            </li>
+                            <li class="sub-title product-price">2.000.000 đ</li>
+                            <li class="sub-title"><button class="btn btn-buy">Buy Now</button></li>
+                        </ul>    
+                    </div>
+                    <!-- <div class="promo-product">
+                        <ul class="product-info">
+                            <li class="product-title">
+                                <span class="title">New <i>Arrivals</i></span>
+                            </li>
+                            <li class="product-img">
+                                <img src="./assets/image/product/men/GEL-KAYANO-30.webp" alt="">
+                            </li>
+                            <li class="sub-title product-name">MEN RUNNING SHOES <br>GT-2000</li>
+                            <li class="sub-title product-vote">
+                                <div class="rating">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </div>
+                            </li>
+                            <li class="sub-title product-price">2.000.000 đ</li>
+                            <li class="sub-title "><button class="btn btn-buy" >Buy Now</button></li>
+                        </ul>  
+                    </div> -->
+                </div>
+            </div>
+            <div class="sale-block">
+                <div class="block">
+                    <div class="sale-img-wrapper sale-img-wrapper--left">
+                        <img src="./assets/image/sales/sale-jun-agust.jpg" alt="sale-jun-agust-2.jpg">
+                        <button class="btn bt--small btn-baner--left"><a href="./assets/torus/sports.html">SHOP NOW</a></button>
+                    </div>
+                    <div class="sale-img-wrapper sale-img-wrapper--right">
+                        <img src="./assets/image/sales/new-arrivals-sale-poster.jpg" alt="sale-jun-agust-2.jpg">
+                        <button class="btn bt--small btn-baner--right"><a href="./assets/torus/sports.html">SHOP NOW</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-container">
+        <div class="container">
+            <div class="col">
+                <h3 class="sub-title">COMPANY NAME</h3>
+                <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                        Toru Store is established in accordance with Certificate of Enterprise Registration No. 0315898690,  
+                        first registration on 13 September 2019, third amendment on 3 November 2021, 
+                        issued by the Office of Business Registration of the Department of Planning and Investment of Ho Chi Minh City.
+                    </li>
+                    <li class="footer-nav__item">
+                        License on Establishment of Retail Outlet No. 0315898690/KD-0437/03.001
+
+                    </li>
+                </ul>
+            </div>
+            <div class="col col-products ">
+                <h3 class="sub-title  ">PRODUCTS</h3>
+                <ul>
+                    <li class="footer-nav__item">New Arrivals</li>
+                    <li class="footer-nav__item">Best Sellers</li>
+                    <li class="footer-nav__item">Men</li>
+                    <li class="footer-nav__item">Women</li>
+                </ul>
+            </div>
+            <div class="col col-userful-links">
+                <h3 class="sub-title">USEFUL LINKS</h3>
+                <ul class="footer-nav__item">
+                    <li class="footer-nav__item">Your Account</li>
+                    <li class="footer-nav__item">Become an Affiliate</li>
+                    <li class="footer-nav__item">Shipping Rates</li>
+                    <li class="footer-nav__item">Help</li>
+                </ul>
+            </div>
+            <div class="col col-contact">
+                <h3 class="sub-title">CONTACT</h3>
+                <ul>
+                    <li class="footer-nav__item">
+                        <i class="fa-solid fa-house"></i>
+                        Binh Tan, Ho Chi Minh city, VN
+                    </li>
+                    <li class="footer-nav__item">
+                        <i class="fa-solid fa-envelope"></i>
+                        TorusStore@gmail.com
+                    </li>
+                    <li class="footer-nav__item">
+                        <i class="fa-solid fa-tty"></i>
+                        0965 999 999
+                    </li>
+                    <li class="footer-nav__item">
+                        <i class="fa-solid fa-fax"></i>
+                        0965 888 888
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div  class="footer-bottom">
+            Register for free
+            <button class="btn bt--small"><a href="./assets/torus/register.html">SIGN UP!</a></button>
+        </div>
+        <div class="social-media">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-google"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>  
+    </footer>
+    <script src="./assets/js/main.js"></script>
+
+</body>
+</html>

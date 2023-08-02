@@ -1,0 +1,144 @@
+.main-container {
+    border-top: 1px solid var(--line-color);
+}
+
+.main-container .container {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    column-gap: 20px;
+    width: calc(100% - 10%);
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+/* Filter-Container */
+.filter-container {
+    padding-right: 20px;
+}
+
+.filter-container .sub-heading {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.filter-according {
+    width: 100%;
+}
+
+.filter-block {
+    position: relative;
+    top: 0
+}
+
+.filter-block .title {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.filter-block .title h3{
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.filter-block .title span {
+    font-size: 2.2rem;
+    font-weight: 800;
+    
+}
+
+.filter_content {
+    
+    padding: 10px 0;
+}
+
+.filter_content .checkbox {
+    font-size: 1.2rem;
+}
+
+/* Price */
+.filter-price {
+    width: 100%;
+}
+
+/* End Filter-Container */
+
+
+/* Product-Container */
+.product-container {
+
+}
+
+.bucket-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    position: relative;
+    top: 0;
+    left: 0;
+    gap: 10px;
+}
+
+.bucket {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    transition: width 0,5s, height 1s;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    padding: 10px 0;
+ 
+}
+
+.bucket:hover { 
+    width : calc(100% + 10px);
+    height: calc(100% + 10px);
+    box-shadow: 2px 2px 15px 1px rgb(190, 182, 182);
+}
+
+.product li {
+    margin-bottom: 10px;
+}
+
+.product-image img {
+    width: 250px;
+}
+
+.product-name {
+    font-size: 1.6rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+}
+
+.buy-btn button{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.4rem;
+    padding: 10px 15px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+
+.product-tag  span{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 8px 15px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+    width: 124px;
+    
+}
+
+
+

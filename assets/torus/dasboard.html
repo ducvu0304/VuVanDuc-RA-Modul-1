@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/admin-v1.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body>
+    <header class="header-container bg-primary text-white">
+        <section class="container p-4">
+            <div class="row">
+                <p class="d-flex align-self-center col-xl-2 h6"> TORUS STORE</p>
+                <nav class="nav-bar d-flex align-self-center col-xl-8 m-auto">
+                    <ul class="d-flex justify-content-between m-auto">
+                        <li class="px-3">
+                            <a class="nav-link text-center" href="./dasboard.html">
+                                <i class="fa-solid fa-gauge"></i> <br>
+                                Dashboard
+                            </a>
+                        </li>
+                        <!-- <li class="px-3"><a class="nav-link" href=""><i class="fas fa-angle-down"></i> Reports</a></li> -->
+                        <li class="px-3">  
+                            <a class="nav-link active text-center" href="./product.html">
+                                <i class="fas fa-shopping-cart"></i> <br>
+                                Products
+                            </a>
+                        </li>
+                        <li class="px-3">
+                            <a class="nav-link text-center" href="./account.html">
+                                <i class="far fa-user "></i><br>
+                                Accounts
+                            </a>
+                        </li>
+                        <li class="px-3">
+                            <a class="nav-link text-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cog"></i> <br>
+                                <span class=""> Settings <i class="fas fa-angle-down"></i> </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="d-flex align-self-center col-xl-2 h6">
+                    <span id="username">Admin</span>
+                    <span>,</span>
+                    <span id="logout-btn" onclick="logout()">Logout</span>
+                </p>
+            </div>
+        </section>
+    </header>
+    <a ></a>
+    <main class="main-container">
+        <section class="container mx-auto mt-3 mb-5" >
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="table-responsive ">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr class="table-dark">
+                                    <th>STT</th>
+                                    <th>ID</th>
+                                    <th>FULL NAME</th>
+                                    <th>EMAIL</th>
+                                    <th>DATE</th>
+                                    <th class="text-center">ACTION</th>
+                                    <th class="select-account">
+                                        <select class="form-select form-select-sm ">
+                                            <option>Account</option>
+                                            <option>Admin</option>
+                                            <option>Customer</option>
+                                        </select>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="account-boddy">
+                                <!-- <tr>
+                                    <td>1</td>
+                                    <td>963258741</td>
+                                    <td>FULL NAME</td>
+                                    <td>admin@gmail.com</td>
+                                    <td>31/7/2023</td>
+                                    <td> 
+                                        <div class="d-flex justify-content-center">
+                                            <a href="#" class="tm-product-delete-link mx-2">
+                                                <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                            </a>
+                                            <a href="#" class="tm-product-delete-link mx-2">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                        </div>  
+                                    </td>
+                                    <td class="text-center">Admin</td>
+                                </tr> -->
+                                <!-- <tr>
+                                    <td>1</td>
+                                    <td>963258741</td>
+                                    <td>LAST NAME</td>
+                                    <td>admin@gmail.com</td>
+                                    <td>31/7/2023</td>
+                                    <td> 
+                                        <div class="d-flex justify-content-center">
+                                            <a href="#" class="tm-product-delete-link mx-2">
+                                                <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                            </a>
+                                            <a href="#" class="tm-product-delete-link mx-2">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                        </div>  
+                                    </td>
+                                    <td class="text-center">Admin</td>
+                                </tr> -->
+                                <!-- <tr>
+                                    <td>1</td>
+                                    <td>963258741</td>
+                                    <td>LAST NAME</td>
+                                    <td>admin@gmail.com</td>
+                                    <td>31/7/2023</td>
+                                    <td> 
+                                        <div class="d-flex justify-content-center">
+                                            <a href="#" class="tm-product-delete-link mx-2">
+                                                <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                            </a>
+                                            <a href="#" class="tm-product-delete-link mx-2">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </a>
+                                        </div>  
+                                    </td>
+                                    <td class="text-center">Admin</td>
+                                </tr> -->
+                                <!-- <tr>
+                                    <td>1</td>
+                                    <td>963258741</td>
+                                    <td>LAST NAME</td>
+                                    <td>admin@gmail.com</td>
+                                    <td>31/7/2023</td>
+                                    <td> 
+                                        <div class="d-flex justify-content-center">
+                                            <span class="tm-product-delete-link mx-2" onclick="removeAccount(id)">
+                                                <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                                            </span>
+                                            <span class="tm-product-delete-link mx-2 text-primary" onclick="editAccount(id)">
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </span>
+                                        </div>  
+                                    </td>
+                                    <td class="text-center">Admin</td>
+                                </tr> -->
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="8">
+                                        <div class="d-flex justify-content-center">
+                                            <a href="./account.html">
+                                                <button type="submit" class="btn btn-primary btn-create ">CREATE ACCOUNT</button>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div> 
+            </div>
+        </section>
+    </main>
+    <!-- <footer class="footer-container bg-primary">
+        <section class="container">
+          <div class="row"> 
+            <div class="col-6">
+              <p class="h5">TORUS STORE</p>
+              <ul class="footer-nav__list">
+                  <li class="footer-nav__item">
+                      Toru Store is established in accordance with Certificate of Enterprise Registration No. 0315898690,  
+                      first registration on 13 September 2019, third amendment on 3 November 2021, 
+                      issued by the Office of Business Registration of the Department of Planning and Investment of Ho Chi Minh City.
+                  </li>
+                  <li class="footer-nav__item">
+                      License on Establishment of Retail Outlet No. 0315898690/KD-0437/03.001
+
+                  </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <p class="h5">PRODUCTS</p>
+              <ul>
+                  <li class="footer-nav__item">New Arrivals</li>
+                  <li class="footer-nav__item">Best Sellers</li>
+                  <li class="footer-nav__item">Men</li>
+                  <li class="footer-nav__item">Women</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <p class="h5">USEFUL LINKS</p>
+              <ul class="footer-nav__item">
+                  <li class="footer-nav__item">Your Account</li>
+                  <li class="footer-nav__item">Become an Affiliate</li>
+                  <li class="footer-nav__item">Shipping Rates</li>
+                  <li class="footer-nav__item">Help</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <p class="h5">CONTACT</p>
+              <ul>
+                  <li class="footer-nav__item">
+                      <i class="fa-solid fa-house"></i>
+                      Binh Tan, Ho Chi Minh city, VN
+                  </li>
+                  <li class="footer-nav__item">
+                      <i class="fa-solid fa-envelope"></i>
+                      TorusStore@gmail.com
+                  </li>
+                  <li class="footer-nav__item">
+                      <i class="fa-solid fa-tty"></i>
+                      0965 999 999
+                  </li>
+                  <li class="footer-nav__item">
+                      <i class="fa-solid fa-fax"></i>
+                      0965 888 888
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+    </footer> -->
+    <!-- Latest compiled JavaScript -->
+    <script src="../js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
+  
+</body>
+</html>
